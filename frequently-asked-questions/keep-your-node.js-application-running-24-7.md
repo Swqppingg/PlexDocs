@@ -1,7 +1,7 @@
 ---
 description: >-
-  To keep your Node.js application running 24/7 on your VPS, you can use the
-  screen command. Follow these steps:
+  To keep a Node.js application running 24/7 on your VPS, you can use the screen
+  command. Follow these steps:
 ---
 
 # Keep Your Node.js Application Running 24/7
