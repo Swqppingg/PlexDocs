@@ -23,8 +23,7 @@ A reverse proxy is a server that forwards requests from clients (e.g., web brows
 This guide assumes you already have:
 
 1. An Ubuntu VPS or dedicated server.
-2. Nginx installed.
-3. Your Node.js application running locally (e.g., on `http://localhost:3000`).
+2. Your Node.js application running locally (e.g., on `http://localhost:3000`).
 
 ###
 
@@ -34,9 +33,8 @@ Nginx is a lightweight, high-performance web server that will act as the reverse
 
 1.  Update your package list:
 
-    ```
-    sudo apt update
-    ```
+    <pre><code><strong>sudo apt update
+    </strong></code></pre>
 2.  Install Nginx:
 
     ```
@@ -162,6 +160,52 @@ To complete the setup, configure your domain's DNS settings:
 ### Step 7: Final Verification
 
 Once the DNS changes have propagated, you should be able to access your application using your domain (e.g., `https://example.com`).
+
+***
+
+### Adding SSL (optional)
+
+Adding SSL to your website is useful if you want to add HTTPS, which allows secure connections , and easy to setup.
+
+### Step 1: Install certbot
+
+certbot is a tool used to generate SSL certificates and allows you to automatically renew your SSL certificate. Follow theses steps to install it:
+
+1.  Update your package list:
+
+    <pre><code><strong>sudo apt update
+    </strong></code></pre>
+2.  Install certbot and the nginx plugin for certbot:
+
+    ```
+    sudo apt install certbot python3-certbot-nginx -y
+    ```
+
+#### Explanation:
+
+* `apt update`: Updates the package list to ensure you get the latest version of certbot.
+* `apt install certbot python3-certbot-nginx`: Installs certbot and the nginx plugin for certbot.
+
+### Step 2: Creating a certificate
+
+After installing certbot, we need to generate a certificate. In the command below, replace `<YOUR_DOMAIN>` with your domain you want to generate a certificate for.
+
+```
+certbot --nginx -d <YOUR_DOMAIN>
+```
+
+Enter a **VALID** email (it will be used for renewal notices), accept the Terms of Service of Let's Encrypt, and choose if you want to sign up to the EFF newsletter (not required).
+
+#### Explanation of the arguments:
+
+* `--nginx`: This argument tells certbot to use the nginx plugin to generate a SSL certificate.
+* `-d <YOUR_DOMAIN>`: Tells certbot what domain do you want to generate a certificate for.
+
+Once done everything, certbot may ask you if you want to redirect users from http to https, so choose the **Redirect** option by typing 2.
+
+### Step 3: Final Verification
+
+Once certbot has finished, you should be able to access your application using your domain with https (e.g., `https://example.com`).
 
 ***
 
