@@ -6,7 +6,7 @@ description: >-
 
 # Setting Up a Reverse Proxy with Nginx
 
-A reverse proxy allows you to use a custom domain for your self-hosted Node.js applications (like websites and bots with dashboards).
+A reverse proxy allows you to use a custom domain for your self-hosted Node.js applications (like websites and bots with dashboards). For a more simpler option, go [here](setting-up-a-reverse-proxy-with-cloudflare-tunnels.md).
 
 {% hint style="danger" %}
 This guide is only applicable if you're using a VPS, dedicated server, or similar. Shared hosting does not support custom reverse proxy setups.

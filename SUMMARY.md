@@ -12,6 +12,7 @@
 * [Plex Tickets/Staff Dashboard](installation-and-setup/plex-tickets-staff-dashboard.md)
 * [Addon System](installation-and-setup/addon-system.md)
 * [Setting Up a Reverse Proxy with Nginx](installation-and-setup/setting-up-a-reverse-proxy-with-nginx.md)
+* [Setting Up a Reverse Proxy with Cloudflare Tunnels](installation-and-setup/setting-up-a-reverse-proxy-with-cloudflare-tunnels.md)
 
 ## Frequently Asked Questions
 
