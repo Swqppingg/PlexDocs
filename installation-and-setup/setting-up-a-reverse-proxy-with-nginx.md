@@ -25,8 +25,6 @@ This guide assumes you already have:
 1. An Ubuntu VPS or dedicated server.
 2. Your Node.js application running locally (e.g., on `http://localhost:3000`).
 
-###
-
 ### Step 1: Install Nginx
 
 Nginx is a lightweight, high-performance web server that will act as the reverse proxy for your application. Follow these steps to install it:
@@ -63,8 +61,6 @@ The first step is to upload the product files to your server. Follow these instr
 2. Place the product folder in a directory, such as `/home/your_product_folder`.
 
 Place your files in an easily accessible directory, such as `/home`, for better organization and management.
-
-
 
 ### Step 3: Create a New Nginx Configuration File
 
@@ -105,8 +101,6 @@ server {
 
 Save and close the file (press `Ctrl+O`, `Enter`, and `Ctrl+X`).
 
-
-
 ### Step 4: Enable the Configuration
 
 Run the following commands:
@@ -120,8 +114,6 @@ sudo unlink /etc/nginx/sites-enabled/default
 
 * `ln -s`: Creates a symbolic link to enable your new configuration.
 * `unlink`: Disables the default Nginx configuration to avoid conflicts.
-
-
 
 ### Step 5: Test and Reload Nginx
 
@@ -139,8 +131,6 @@ sudo systemctl reload nginx
 
 If there are no errors, your reverse proxy is now set up!
 
-
-
 ### Step 6: Point Your Domain to the Server
 
 To complete the setup, configure your domain's DNS settings:
@@ -154,8 +144,6 @@ To complete the setup, configure your domain's DNS settings:
 
 * Ensure you only create a single **A Record** pointing to your server's IP.
 * DNS propagation may take a few minutes to several hours.
-
-
 
 ### Step 7: Final Verification
 
