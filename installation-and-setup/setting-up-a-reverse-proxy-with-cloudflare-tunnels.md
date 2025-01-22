@@ -6,7 +6,7 @@ description: >-
 
 # Setting Up a Reverse Proxy with Cloudflare Tunnels
 
-A reverse proxy allows you to use a custom domain for your self-hosted Node.js applications (like websites and bots with dashboards). This guide will walk you through setting up a reverse proxy using Cloudflare Tunnels, using Ubuntu as the base OS of this documentation. If you want a more advanced option, go [here](setting-up-a-reverse-proxy-with-cloudflare-tunnels.md).
+A reverse proxy allows you to use a custom domain for your self-hosted Node.js applications (like websites and bots with dashboards). This guide will walk you through setting up a reverse proxy using Cloudflare Tunnels, using Ubuntu as the base OS of this documentation. If you want a more advanced option, go [here](setting-up-a-reverse-proxy-with-nginx.md).
 
 {% hint style="danger" %}
 This guide is only applicable if you're using a VPS, dedicated server, or similar. Shared hosting does not support custom reverse proxy setups.
@@ -79,6 +79,10 @@ trustProxy: true # Enable If your application is behind a reverse proxy (like Cl
 ```
 
 Make sure the URL and the callback URL matches the domain, and save the config, and restart the application.
+
+### Step 4: Final Verification
+
+Once the DNS changes have propagated, you should be able to access your application using the domain set on Cloudflare Zero Trust. (e.g., `https://example.com`)
 
 ### Adding multiple public hostnames
 

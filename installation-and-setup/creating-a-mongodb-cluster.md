@@ -1,6 +1,6 @@
 # Creating a MongoDB Cluster
 
-To get the MongoDB connection string, you have to create a MongoDB Cluster, If you don't know how to do that, you can either watch this short tutorial video or follow the instructions below:
+To get the MongoDB connection string, you have to create a MongoDB Cluster. If you don't know how to do that, you can either watch this short tutorial video or follow the instructions below:
 
 ### Video tutorial:
 
