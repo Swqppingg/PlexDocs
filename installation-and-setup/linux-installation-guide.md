@@ -54,10 +54,9 @@ description: 'Follow these steps to install and run the bot on your Linux server
 {% hint style="info" %}
 ### **Keeping the Bot Online 24/7**
 
-To keep the bot running continuously, you can use the `screen` command. [Click here for a detailed guide on using `screen`.](../frequently-asked-questions/keep-your-node.js-application-running-24-7.md)
+To keep the bot running continuously, you can use the `screen` command or the `tmux` command. [Click here for a detailed guide on using](../frequently-asked-questions/keep-your-node.js-application-running-24-7.md)[ `screen` or `tmux`.](../frequently-asked-questions/keep-your-node.js-application-running-24-7.md)
 {% endhint %}
 
-
-
-
-
+{% hint style="success" %}
+By following this guide, your bot should be up and running in no time. For additional help, feel free to reach out to our support team on Discord.
+{% endhint %}

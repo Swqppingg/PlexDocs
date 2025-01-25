@@ -47,6 +47,8 @@ description: >-
    * This ensures compatibility with any new options or changes introduced in the updated version.
 4. Save the updated `config.yml` file once all changes are copied.
 
+***
+
 ### **Step 5: Install Dependencies (if needed)**
 
 1.  If the update includes new dependencies, you may need to run the following command:
@@ -57,6 +59,8 @@ description: >-
 
     * This ensures all required Node.js packages are installed.
 
+***
+
 ### **Step 6: Start the Bot**
 
 1. Start the bot as you normally would.
@@ -65,4 +69,3 @@ description: >-
 {% hint style="success" %}
 By following these steps, you’ll ensure a smooth update process while keeping your configurations and data intact. For any issues or questions, feel free to reach out via our [Discord Server](https://discord.gg/plexdev).
 {% endhint %}
-

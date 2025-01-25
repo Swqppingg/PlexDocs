@@ -64,10 +64,10 @@ description: 'Follow these steps to install and run the bot on your Windows syst
 1. Open your Discord server and check if the bot is online.
    * If the bot isn’t online:
      * Double-check your **bot token** in the `config.yml`.
+     * Make sure the required intents are enabled.
      * Verify that your **license key** is correctly entered.
 2. If you’ve confirmed these are correct and the bot is still not working, create a ticket in our [Discord Server](https://discord.gg/plexdev) for further assistance.
 
 {% hint style="success" %}
 By following this guide, your bot should be up and running in no time. For additional help, feel free to reach out to our support team on Discord.
 {% endhint %}
-

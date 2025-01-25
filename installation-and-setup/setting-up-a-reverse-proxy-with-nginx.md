@@ -41,8 +41,7 @@ Nginx is a lightweight, high-performance web server that will act as the reverse
 3.  Start and enable Nginx to ensure it runs on boot:
 
     ```
-    sudo systemctl start nginx
-    sudo systemctl enable nginx
+    sudo systemctl enable --now nginx
     ```
 4. Verify the installation by visiting your server's public IP address in a browser. You should see the default Nginx welcome page.
 
@@ -50,8 +49,7 @@ Nginx is a lightweight, high-performance web server that will act as the reverse
 
 * `apt update`: Updates the package list to ensure you get the latest version of Nginx.
 * `apt install nginx`: Installs Nginx.
-* `systemctl start nginx`: Starts the Nginx service immediately.
-* `systemctl enable nginx`: Ensures Nginx starts automatically when the server boots.
+* `systemctl enable --now nginx`: Starts the Nginx service immediately and ensures Nginx starts automatically when the server boots.
 
 ### Step 2: Upload your files to the server
 
@@ -74,6 +72,7 @@ Add the following configuration:
 
 ```
 server {
+    listen 80;
     server_name example.com; # Change to your domain.
 
     location / {
@@ -107,13 +106,13 @@ Run the following commands:
 
 ```
 sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
-sudo unlink /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/default
 ```
 
 #### Explanation:
 
 * `ln -s`: Creates a symbolic link to enable your new configuration.
-* `unlink`: Disables the default Nginx configuration to avoid conflicts.
+* `rm`: Disables the default Nginx configuration to avoid conflicts.
 
 ### Step 5: Test and Reload Nginx
 
@@ -147,13 +146,24 @@ To complete the setup, configure your domain's DNS settings:
 
 ### Step 7: Final Verification
 
-Once the DNS changes have propagated, you should be able to access your application using your domain (e.g., `https://example.com`).
+Once the DNS changes have propagated, you should be able to access your application using your domain (e.g., `http://example.com`).
+
+### Step 8: Making the application recognize our domain
+
+Now that we have everything setup, we must now configure the application to accept proxies. Go to your `config.yml` file, and find `Secure`, and `trustProxy`. You must disable Secure and enable trustProxy instead. It should look like this:
+
+```yaml
+Secure: false # Enable if you are using HTTPS
+trustProxy: true # Enable If your application is behind a reverse proxy (like Cloudflare, Nginx, etc.)
+```
+
+Make sure the URL and the callback URL matches the domain, and save the config, and restart the application.
 
 ***
 
 ### Adding SSL (optional)
 
-Adding SSL to your website is useful if you want to add HTTPS, which allows secure connections , and easy to setup.
+Adding SSL to your website is useful if you want to add HTTPS, which allows secure connections , and easy to setup. This requires a reverse proxy that has already been configured. Follow the guide above if you already don't have one.
 
 ### Step 1: Install certbot
 
@@ -206,8 +216,6 @@ If you need to host multiple Node.js applications, you can repeat all the steps 
 3. Ensure that each application is running independently and that the correct ports are open on your VPS or server.
 
 By following these guidelines, you can host multiple applications and manage them seamlessly using Nginx as a reverse proxy.
-
-
 
 {% hint style="success" %}
 Congratulations! Your setup is now complete. If everything is configured correctly, your application should be accessible via your custom domain. If you encounter any issues, double-check the steps above or contact support for assistance.

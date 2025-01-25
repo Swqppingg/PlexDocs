@@ -62,13 +62,13 @@ For the product to be able to connect, you must get a connection string. To get 
 You should now see some options telling you ways to connect. Click on Drivers, then copy the string that starts with `mongodb+srv://` . A connection string usually looks like this:
 
 ```
-mongodb+srv://<username>:<db_password>@<cluster_url>/?retryWrites=true&w=majority&appName=<cluster_name>
+mongodb+srv://<username>:<password>@<cluster-url>/<database>?retryWrites=true&w=majority
 ```
 
 Now, go to the `config.yml` file of the product, and locate the `MongoURI` field. There, insert your connection string that MongoDB provided you. It usually looks like this:
 
 ```yaml
-MongoURI: "mongodb+srv://<username>:<db_password>@<cluster_url>/?retryWrites=true&w=majority&appName=<cluster_name>"
+MongoURI: "mongodb+srv://<username>:<password>@<cluster-url>/<database>?retryWrites=true&w=majority>"
 ```
 
 {% hint style="success" %}

@@ -14,7 +14,7 @@ This is your central resource for understanding, setting up, and troubleshooting
 
 Some unauthorized websites are distributing modified versions of our products containing **backdoors** or other malicious code. For your safety:
 
-* **Always download our products directly from our official platforms**: [Plex Development](https://plexdevelopment.net) or our [Discord Server](https://discord.gg/plexdev).
+* **Always download our products directly from our official platforms**: [Plex Development](https://plexdevelopment.net), our [Discord Server](https://discord.gg/plexdev), or [BuiltByBit](https://builtbybit.com/creators/swqpping.156689).
 * **Using leaked or unauthorized versions of our products is illegal** and may result in compromised security and functionality.
 {% endhint %}
 
