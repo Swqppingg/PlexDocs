@@ -20,11 +20,7 @@ Plex Store uses emails for the following:
 * When a customer purchases an item it sends them a confirmation email with a list of what they bought.
 * General notifications
 
-
-
-
-
-## Option 1: Using SendGGrid
+## Option 1: Using SendGrid
 
 ### How to Get an API Key from SendGrid (Free)
 
@@ -65,40 +61,61 @@ Plex Store uses emails for the following:
 
 1. Open the `config.yml` and paste the API Key wherever you need it.
 
-
-
-
-
 ## Option 2: Using SMTP
 
-### How to get SMTP credentials (Free)
+### How to get SMTP credentials (Free or Paid)
+
+This guide will teach you how to make a SMTP2GO account and connecting your domain. If you already have a SMTP server, skip directly to [Step 5](email-system.md#step-5-fill-out-the-config.yml).
 
 ### Step 1: Creating an [SMTP2GO](https://www.smtp2go.com/) account
 
-1. **Visit smtp2go:** Go to [SMTP2GO's website](https://www.smtp2go.com/)
+1. **Visit smtp2go:** Go to [SMTP2GO's website](https://www.smtp2go.com/).
 2. Choose the free plan.
 3. **Register**: Click on the Sign up button on the top right corner, and fill out the required information.
 
+{% hint style="warning" %}
+SMTP2GO does not support any shared/public email addresses. You may get a error saying: Error code 6 - Emails on the shared domain cannot be used. If this is the case, try another email from another domain.
+{% endhint %}
+
+4. Verify your email by checking your inbox.
+
 ### Step 2: Log in to your account
 
-1. If you not logged in yet, go to the main page of the website, and log in.
+If you are not logged in yet, [login to SMTP2GO](https://app.smtp2go.com/login/).
 
 ### Step 3: Connect your domain&#x20;
 
 1. Go to Sending -> Verified senders and click on "Add sender domain".
-2. Connect your domain based on the instructions.
+
+<div><figure><img src="../.gitbook/assets/firefox_Et5GM1Uwcd.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/firefox_owxpgxs72s.png" alt="" width="563"><figcaption></figcaption></figure></div>
+
+2. Connect your domain based on the instructions. This will require editing your DNS records.
 
 ### Step 4: Create an SMTP user
 
-1. Go to Sending -> SMTP users and click on "Add SMPT user"
-2. Fill out the required information, then click on the blue "Add SMTP User" button.
+1. Go to Sending -> SMTP users and click on "Add SMTP user".
+
+<figure><img src="../.gitbook/assets/firefox_tOSuFRR0er.png" alt=""><figcaption></figcaption></figure>
+
+Fill out the required information, then click on the blue "Add SMTP User" button.
 
 ### Step 5: Fill out the config.yml
 
 1. Open the config.yml of the store.
 2. Go to the email settings.
 3. Set **provider** to "smtp"
-4. Set the SMTP details you got from smtp2go. Basic example:
+4. Set the SMTP details you got from SMTP2GO or from your SMTP provider. Example:
+
+```yaml
+  smtp:
+    host: "mail.example.com"
+    port: 587
+    secure: true
+    user: "your-email@example.com"
+    password: "your-smtp-password"
+```
+
+SMTP2GO Example:
 
 ```yaml
   smtp:
@@ -108,3 +125,7 @@ Plex Store uses emails for the following:
     user: "your-email@example.com"
     password: "your-smtp-password"
 ```
+
+{% hint style="success" %}
+Congrats! You have successfully setup emails for Plex Store.
+{% endhint %}
