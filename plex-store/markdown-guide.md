@@ -15,33 +15,37 @@ Use `#` symbols followed by a space to create headings. The number of `#` symbol
 #### Heading 4
 ```
 
-### **Emphasis (Italics and Bold)**
+<details>
 
-* Italicize text with one asterisk or underscore: `*italic*` or `_italic_`
-* Bold text with two asterisks or underscores: `**bold**` or `__bold__`
-* Combine both: `**This is bold and *italic* text.**`
+<summary>Example</summary>
 
-```
-*This text is italicized.*
-_This text is also italicized._
+## Heading 1
 
-**This text is bold.**
-__This text is also bold.__
+### Heading 2
 
-**This is bold and *italic* text.**
-```
+#### Heading 3
 
-### Strikethrough
+**Heading 4**
 
-Use two tildes `~~` to strike through text.
+</details>
 
-```
-~~This text is strikethrough.~~
-```
+### **Text formatting**
+
+Plex Store currently support most markdown formatting. Simply add `**`, `_`, or `~~` around text to format it.
+
+| Style         | How to write it          | Result            |
+| ------------- | ------------------------ | ----------------- |
+| Bold          | `**bold**` or `__bold__` | **bold**          |
+| Italic        | `*italic*` or `_italic_` | _italic_          |
+| Strikethrough | `~~strikethrough~~`      | ~~strikethrough~~ |
+
+You can also combine them. For example, write `**_bold and italic_**` to get _**bold and italic**_ text.
 
 ### Blockquotes
 
 Use `>` to create a blockquote.
+
+> This is a blockquote.
 
 ```
 > This is a blockquote.
@@ -49,25 +53,52 @@ Use `>` to create a blockquote.
 
 ### Lists
 
-* **Unordered Lists**: Use `-`, `+`, or `*` followed by a space.
-* **Ordered Lists**: Use numbers followed by a period.
+#### Ordered Lists
 
+To create a ordered list, add line items with numbers followed by periods.
+
+1. Line 1
+2. Line 2
+3. Line 3
+4. Line 4
+
+```md
+1. Line 1
+2. Line 2
+3. Line 3
+4. Line 4
 ```
-- Item 1
-- Item 2
-  - Subitem 1
-  - Subitem 2
 
-+ Item 1
-+ Item 2
+#### Unordered List <a href="#unordered-list" id="unordered-list"></a>
 
-* Item 1
-* Item 2
+To create a unordered list, add dashes (`-`), asterisks (`*`), or plus signs (`+`) in front of line items.
 
-1. First item
-2. Second item
-   1. Subitem 1
-   2. Subitem 2
+* First item
+* Second item
+* Third item
+* Fourth item
+
+```md
+- First item
+- Second item
+- Third item
+- Fourth item
+```
+
+You can also nest them by adding indents on the list items:
+
+* First item
+* Second item
+  * Additional item
+  * Additional item
+* Third item
+
+```md
+- First item
+- Second item
+  - Additional item
+  - Additional item
+- Third item
 ```
 
 ### Links
