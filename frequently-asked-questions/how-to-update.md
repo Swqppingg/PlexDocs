@@ -8,7 +8,7 @@ description: >-
 # How to update
 
 {% hint style="danger" %}
-**Note:** This guide only covers updating **Plex Tickets**, **Plex Staff**, and **Plex Status**. For instructions on how to update **Plex Store**, please visit [this link](../plex-store/how-to-update.md).
+**Note:** This guide only covers updating **Plex Tickets**, **Plex Staff**, **Plex Status,** and **Plex Forms**. For instructions on how to update **Plex Store**, please visit [this link](../plex-store/how-to-update.md).
 {% endhint %}
 
 
@@ -36,6 +36,8 @@ description: >-
 2. **Replace all existing files** with the newly downloaded ones.
 
 **Plex Status:** Don't replace the `history.json` or `lastUpdated.json` file.
+
+**Plex Forms:** Don't replace or delete the `uploads` folder
 
 ***
 
