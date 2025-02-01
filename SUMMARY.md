@@ -20,6 +20,7 @@
 * [How to update](frequently-asked-questions/how-to-update.md)
 * [Common Issues](frequently-asked-questions/common-issues.md)
 * [How to get channel/role/user ID](frequently-asked-questions/how-to-get-channel-role-user-id.md)
+* [Using Custom Emojis](frequently-asked-questions/using-custom-emojis.md)
 * [How to add multiple role ID's to config](frequently-asked-questions/how-to-add-multiple-role-ids-to-config.md)
 * [Valid timezones](frequently-asked-questions/valid-timezones.md)
 * [Keep Your Node.js Application Running 24/7](frequently-asked-questions/keep-your-node.js-application-running-24-7.md)
