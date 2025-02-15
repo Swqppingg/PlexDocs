@@ -10,9 +10,13 @@
 * [Bot Application Setup](installation-and-setup/bot-application-setup.md)
 * [Creating a MongoDB Cluster](installation-and-setup/creating-a-mongodb-cluster.md)
 * [Plex Tickets/Staff Dashboard](installation-and-setup/plex-tickets-staff-dashboard.md)
-* [Addon System](installation-and-setup/addon-system.md)
 * [Setting Up a Reverse Proxy with Nginx](installation-and-setup/setting-up-a-reverse-proxy-with-nginx.md)
 * [Setting Up a Reverse Proxy with Cloudflare Tunnels](installation-and-setup/setting-up-a-reverse-proxy-with-cloudflare-tunnels.md)
+
+## Product Addons
+
+* [Creating an addon](product-addons/creating-an-addon.md)
+* [Addon Guidelines](product-addons/addon-guidelines.md)
 
 ## Frequently Asked Questions
 
