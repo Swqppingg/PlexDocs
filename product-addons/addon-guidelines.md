@@ -40,6 +40,10 @@ These guidelines are designed to ensure a fair, consistent, and high-quality add
 
 
 {% hint style="success" %}
+We're building an ecosystem of innovation, learning, and quality. Whether you're creating a simple utility or a complex solution, we welcome your contributions!
+
+
+
 By following these guidelines and utilizing the provided documentation, you can create addons that enhance the Plex Development ecosystem and benefit our users. We look forward to seeing your innovative creations!
 {% endhint %}
 
