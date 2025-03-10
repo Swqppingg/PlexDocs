@@ -39,6 +39,8 @@ description: >-
 
 **Plex Forms:** Don't replace or delete the `uploads` folder
 
+**Plex Staff:** Don't replace or delete the `uploads` folder
+
 ***
 
 ### **Step 4: Update the Configuration File**
