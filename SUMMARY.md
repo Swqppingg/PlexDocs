@@ -20,7 +20,7 @@
 
 ## Frequently Asked Questions
 
-* [Recommended Hosts](frequently-asked-questions/recommended-hosts.md)
+* [⭐ Recommended Hosts](frequently-asked-questions/recommended-hosts.md)
 * [How to update](frequently-asked-questions/how-to-update.md)
 * [Common Issues](frequently-asked-questions/common-issues.md)
 * [How to get channel/role/user ID](frequently-asked-questions/how-to-get-channel-role-user-id.md)

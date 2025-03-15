@@ -5,7 +5,7 @@ description: >-
   compatibility with Node.js applications.
 ---
 
-# Recommended Hosts
+# ⭐ Recommended Hosts
 
 {% hint style="warning" %}
 I**mportant Note for Web Dashboards**
