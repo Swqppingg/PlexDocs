@@ -63,3 +63,13 @@ If you plan to host a **web dashboard**, such as **Plex Store**, **Plex Tickets 
   * Host multiple Discord bots
   * Run web dashboards (e.g., **Plex Store**, **Plex Tickets Dashboard**, **Plex Staff**) with a custom domain.
   * Host other applications or services.
+
+
+
+
+
+
+
+{% hint style="info" %}
+Some of the links on this page are affiliate links, which means we may earn a commission if you make a purchase — at no additional cost to you.
+{% endhint %}
