@@ -13,6 +13,10 @@
 * [Setting Up a Reverse Proxy with Nginx](installation-and-setup/setting-up-a-reverse-proxy-with-nginx.md)
 * [Setting Up a Reverse Proxy with Cloudflare Tunnels](installation-and-setup/setting-up-a-reverse-proxy-with-cloudflare-tunnels.md)
 
+***
+
+* [Plex Tickets: Categories & Panels](plex-tickets-categories-and-panels.md)
+
 ## Product Addons
 
 * [Creating an addon](product-addons/creating-an-addon.md)
