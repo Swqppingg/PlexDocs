@@ -13,11 +13,6 @@
 * [Setting Up a Reverse Proxy with Nginx](installation-and-setup/setting-up-a-reverse-proxy-with-nginx.md)
 * [Setting Up a Reverse Proxy with Cloudflare Tunnels](installation-and-setup/setting-up-a-reverse-proxy-with-cloudflare-tunnels.md)
 
-***
-
-* [Plex Tickets: Categories & Panels](plex-tickets-categories-and-panels.md)
-* [Plex Tickets: AI AutoResponse](plex-tickets-ai-autoresponse.md)
-
 ## Product Addons
 
 * [Creating an addon](product-addons/creating-an-addon.md)
@@ -33,6 +28,11 @@
 * [How to add multiple role ID's to config](frequently-asked-questions/how-to-add-multiple-role-ids-to-config.md)
 * [Valid timezones](frequently-asked-questions/valid-timezones.md)
 * [Keep Your Node.js Application Running 24/7](frequently-asked-questions/keep-your-node.js-application-running-24-7.md)
+
+## 🎫 Plex Tickets
+
+* [Categories & Panels](plex-tickets/categories-and-panels.md)
+* [AI AutoResponse](plex-tickets/ai-autoresponse.md)
 
 ## 🛒 PLEX STORE
 
