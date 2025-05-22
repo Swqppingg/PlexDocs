@@ -65,18 +65,19 @@ Categories define the different types of tickets users can create. They're confi
 ```yaml
 TicketCategories:
   TicketCategory1:  # This is the category ID (must be unique)
-    TicketName: "General Support"  # Display name
-    Description: "General support questions"  # Short description (shown in select menus)
-    TicketCategoryID: "731044694590750821"  # Discord category ID where tickets will be created
-    TicketMessageTitle: "Support Ticket ({category})"  # Title of the message in new tickets
-    TicketMessage: "> Thank you for contacting support.\n> Please describe your issue and await a response."  # Message content
-    ButtonEmoji: "🔧"  # Emoji displayed on the button
-    ButtonColor: "Green"  # Button color (Green, Red, Blurple, Gray)
-    SupportRoles: ["731044651078910012"]  # Role IDs that can access these tickets
-    MentionSupportRoles: false  # Whether to mention support roles when ticket is created
-    ChannelName: "ticket-{username}"  # Naming pattern for ticket channels
-    RequiredRoles: []  # Roles required to create this type of ticket (empty = anyone)
-    Questions: []  # Form questions (explained below)
+    CategoryName: "Example 1" # This will be the button and ticket name/category
+    Description: "" # Category description, This only works if SelectMenu is enabled, Leave blank to disable
+    ParentCategoryID: "731044694590750821"  # Discord category where tickets will be created
+    EmbedTitle: "Support Ticket ({category})" # Use {category} to get the category name for the ticket opened
+    EmbedMessage: "> Thank you for contacting support.\n> Please describe your issue and await a response." # Use {user} to get the user that created the ticket, {createdAt} to get when the ticket was created using a Discord timestamp
+    CategoryEmoji: "" # Leave blank for no emoji
+    ButtonColor: "Green" # Blurple, Gray, Green, Red
+    SupportRoles: ["731044651078910012"] # Users with these roles can view tickets in this category, You can add multiple roles
+    MentionSupportRoles: false # Mention all the Support Roles in new tickets?
+    ChannelName: "ticket-{username}" # Variables: {total-tickets}, {username}, {user-id}
+    LogsChannelID: "CHANNEL_ID" # Channel ID for category-specific logs (leave empty to use the default logs channel)
+    RequiredRoles: [] # Require the user to have a specific role to open a ticket in this category? You can add multiple, leave blank to disable
+    Questions: [] # Questions asked when creating a ticket in a modal
 ```
 
 #### Adding More Categories
@@ -88,9 +89,9 @@ TicketCategories:
   # Existing categories...
   
   TicketCategory4:
-    TicketName: "Feature Request"
+    CategoryName: "Feature Request"
     Description: "Suggest a new feature"
-    TicketCategoryID: "731044694590750821"
+    ParentCategoryID: "731044694590750821"
     # Additional settings...
 ```
 
@@ -168,12 +169,12 @@ TicketPanels:
 ```yaml
 TicketCategories:
   StaffApplication:
-    TicketName: "Staff Application"
+    CategoryName: "Staff Application"
     Description: "Apply to join our team"
-    TicketCategoryID: "123456789012345678"
-    TicketMessageTitle: "Staff Application ({category})"
-    TicketMessage: "> Thank you for applying to join our team.\n> Your application has been submitted and will be reviewed soon."
-    ButtonEmoji: "👥"
+    ParentCategoryID: "123456789012345678"
+    EmbedTitle: "Staff Application ({category})"
+    EmbedMessage: "> Thank you for applying to join our team.\n> Your application has been submitted and will be reviewed soon."
+    CategoryEmoji: "👥"
     ButtonColor: "Blurple"
     SupportRoles: ["123456789012345678"]
     MentionSupportRoles: true
