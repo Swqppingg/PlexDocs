@@ -16,6 +16,7 @@
 ***
 
 * [Plex Tickets: Categories & Panels](plex-tickets-categories-and-panels.md)
+* [Plex Tickets: AI AutoResponse](plex-tickets-ai-autoresponse.md)
 
 ## Product Addons
 
