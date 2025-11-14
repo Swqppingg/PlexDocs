@@ -618,7 +618,7 @@ getStatistics();  // Fetch platform statistics
 
 ### Endpoint: `/api/reviews` (GET)
 
-This API endpoint allows you to retrieve all reviews submitted by users. Each review includes the user's Discord ID, the name of the product reviewed, the rating, the comment, and the creation date.
+This API endpoint allows you to retrieve all reviews submitted by users. Each review includes the user's information, the name of the product reviewed, the rating, the comment, and the creation date.
 
 #### Headers
 
@@ -632,18 +632,26 @@ This API endpoint allows you to retrieve all reviews submitted by users. Each re
 ```json
 [
   {
-    "discordID": "123456789012345678",
-    "productName": "Product 1",
-    "rating": 5,
-    "comment": "Excellent product!",
-    "createdAt": "2024-08-15T14:56:29.000Z"
+    "reviewId": "507f191e810c19729de860ea",  // ID of the review
+    "userId": "507f1f77bcf86cd799439011",     // ID of the user who wrote the review
+    "discordID": "123456789012345678",        // Discord ID (null for local accounts)
+    "username": "JohnDoe",                    // Display username (Discord username or local username)
+    "avatarPath": "/images/default-avatar.png", // Path to user's avatar image
+    "productName": "Premium Package",          // Name of the product being reviewed
+    "rating": 5,                               // Rating from 1 to 5 stars
+    "comment": "Excellent product!",           // Review comment text
+    "createdAt": "2024-01-15T14:56:29.000Z"   // ISO 8601 timestamp when review was created
   },
   {
-    "discordID": "987654321098765432",
-    "productName": "Product 2",
-    "rating": 2,
-    "comment": "Very good, but could be better.",
-    "createdAt": "2024-08-14T10:30:00.000Z"
+    "reviewId": "507f191e810c19729de860eb",
+    "userId": "507f1f77bcf86cd799439012",
+    "discordID": null,                         // null indicates this is a local account (email/password)
+    "username": "jane_doe",
+    "avatarPath": "/images/default-avatar.png",
+    "productName": "Basic Package",
+    "rating": 4,
+    "comment": "Good value for money",
+    "createdAt": "2024-01-20T10:30:00.000Z"
   }
 ]
 ```
