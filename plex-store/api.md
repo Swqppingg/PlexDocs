@@ -20,13 +20,13 @@ The API key is private and should not be shared with anyone. It can be any strin
 
 ***
 
-### Endpoint: `/api/users/:discordID` (GET)
+### Endpoint: `/api/users/:userId` (GET)
 
-This API endpoint allows you to retrieve detailed information about a user based on their Discord ID. The data returned includes user information, the contents of their cart, and the products they own.
+This API endpoint allows you to retrieve detailed information about a user based on their Discord ID. The data returned includes user information, the contents of their cart, and the products/serials they own.
 
 #### URL Parameters
 
-* **discordID** (string): The Discord ID of the user whose information you want to retrieve.
+* **userID** (string): The Discord ID or User ID of the user whose information you want to retrieve.
 
 #### Headers
 
@@ -39,29 +39,52 @@ This API endpoint allows you to retrieve detailed information about a user based
 
 ```json
 {
+  "id": "123456789012345678",
   "discordID": "123456789012345678",
+  "userId": "507f1f77bcf86cd799439011",
+  "username": "JohnDoe",
+  "displayName": "JohnDoe",
   "banned": false,
   "email": "user@example.com",
+  "emailVerified": true,
   "totalSpent": 150.00,
   "joinedAt": "2024-01-15T14:56:29.000Z",
+  "authMethod": "discord",
   "cart": [
     {
+      "_id": "507f191e810c19729de860ea",
       "name": "Product 1",
       "productType": "digitalPaid"
     },
     {
+      "_id": "507f191e810c19729de860eb",
       "name": "Product 2",
       "productType": "digitalFree"
     }
   ],
   "ownedProducts": [
     {
-      "name": "Product 3",
+      "_id": "507f191e810c19729de860ec",
+      "name": "Paid product",
       "productType": "digitalPaid"
     },
     {
-      "name": "Product 4",
+      "_id": "507f191e810c19729de860ed",
+      "name": "Free product",
       "productType": "digitalFree"
+    },
+    {
+      "_id": "507f191e810c19729de860ed",
+      "name": "Service product",
+      "productType": "service"
+    }
+  ],
+  "ownedSerials": [
+    {
+      "productId": "507f191e810c19729de860ec",
+      "productName": "Premium License",
+      "key": "XXXX-XXXX-XXXX-XXXX",
+      "purchaseDate": "2024-01-20T10:30:00.000Z"
     }
   ]
 }
@@ -86,9 +109,9 @@ This API endpoint allows you to retrieve detailed information about a user based
 ```javascript
 const axios = require('axios');
 
-const getUserData = async (discordID) => {
+const getUserData = async (userId) => {
   try {
-    const response = await axios.get(`https://your-api-domain.com/api/users/${discordID}`, {
+    const response = await axios.get(`https://your-api-domain.com/api/users/${userId}`, {
       headers: {
         'x-api-key': 'your-api-key'  // Replace with your actual API key
       }
@@ -107,14 +130,14 @@ getUserData('123456789012345678');  // Replace with the actual Discord User ID
 
 ***
 
-### Endpoint: `/api/users/:discordID/addproduct/:urlId` (POST)
+### Endpoint: `/api/users/:userId/addproduct/:urlId` (POST)
 
 This API endpoint allows you to add a specific product to a user's owned products list based on their Discord ID and the product's unique `urlId`.
 
 #### URL Parameters
 
-* **`discordID` (string)**:\
-  The Discord ID of the user to whom the product should be added.
+* **`userId`(string)**:\
+  The Discord ID or User ID of the user to whom the product should be added.
 * **`urlId` (string)**:\
   The unique identifier for the product to be added. This is typically a URL-safe string such as `product-name`.
 
@@ -131,12 +154,28 @@ This API endpoint allows you to add a specific product to a user's owned product
 {
   "message": "PRODUCT_ADDED_SUCCESSFULLY",
   "user": {
-    "discordID": "123456789",
-    "ownedProducts": ["60f8c8f8c8f8c8f8c8f8c8f8"] // A list of all products the user owns
+    "id": "123456789012345678",
+    "discordID": "123456789012345678",
+    "email": "user@example.com",
+    "authMethod": "discord",
+    "ownedProducts": [ // A list of all products the user owns
+      {
+        "_id": "507f191e810c19729de860ea",
+        "name": "Premium Package",
+        "productType": "digitalPaid",
+        "urlId": "premium-package"
+      },
+      {
+        "_id": "507f191e810c19729de860eb",
+        "name": "Test Product",
+        "productType": "digitalPaid",
+        "urlId": "test-product"
+      }
+    ]
   },
   "product": { // The product that was added
     "name": "Test Product",
-    "urlId": "test-product",
+    "urlId": "test-product"
   }
 }
 ```
@@ -166,9 +205,9 @@ This API endpoint allows you to add a specific product to a user's owned product
 ```javascript
 const axios = require('axios');
 
-const addProductToUser = async (discordID, urlId) => {
+const addProductToUser = async (userId, urlId) => {
   try {
-    const response = await axios.post(`https://your-api-domain.com/api/users/${discordID}/addproduct/${urlId}`, {}, {
+    const response = await axios.post(`https://your-api-domain.com/api/users/${userId}/addproduct/${urlId}`, {}, {
       headers: {
         'x-api-key': 'your-api-key' // Replace with your actual API key
       }
@@ -186,14 +225,14 @@ addProductToUser('123456789', 'test-product'); // Replace with the actual Discor
 
 ***
 
-### Endpoint: `/api/users/:discordID/removeproduct/:urlId` (POST)
+### Endpoint: `/api/users/:userId/removeproduct/:urlId` (POST)
 
 This API endpoint allows you to remove a specific product from a user's owned products list based on their Discord ID and the product's unique `urlId`.
 
 #### URL Parameters
 
-* **`discordID` (string)**:\
-  The Discord ID of the user to whom the product should be added.
+* **`userId`(string)**:\
+  The Discord ID or User ID of the user to whom the product should be added.
 * **`urlId` (string)**:\
   The unique identifier for the product to be added. This is typically a URL-safe string such as `product-name`.
 
@@ -210,11 +249,21 @@ This API endpoint allows you to remove a specific product from a user's owned pr
 {
   "message": "PRODUCT_REMOVED_SUCCESSFULLY",
   "user": {
-    "discordID": "123456789",
-    "ownedProducts": [] // A list of all products the user owns
+    "id": "123456789012345678",
+    "discordID": "123456789012345678",
+    "email": "user@example.com",
+    "authMethod": "discord",
+    "ownedProducts": [ // A list of all products the user owns
+      {
+        "_id": "507f191e810c19729de860ea",
+        "name": "Premium Package",
+        "productType": "digitalPaid",
+        "urlId": "premium-package"
+      }
+    ]
   },
   "product": { // The product that was removed
-    "name": "Test Product", 
+    "name": "Test Product",
     "urlId": "test-product"
   }
 }
@@ -245,9 +294,9 @@ This API endpoint allows you to remove a specific product from a user's owned pr
 ```javascript
 const axios = require('axios');
 
-const removeProductFromUser = async (discordID, urlId) => {
+const removeProductFromUser = async (userId, urlId) => {
   try {
-    const response = await axios.post(`https://your-api-domain.com/api/users/${discordID}/removeproduct/${urlId}`, {}, {
+    const response = await axios.post(`https://your-api-domain.com/api/users/${userId}/removeproduct/${urlId}`, {}, {
       headers: {
         'x-api-key': 'your-api-key' // Replace with your actual API key
       }
