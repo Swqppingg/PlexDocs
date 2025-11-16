@@ -2,38 +2,31 @@
 
 ### Creating your bot <a href="#creating-your-bot" id="creating-your-bot"></a>
 
-1. Open [the Discord developer portal ](https://discord.com/developers/applications)and log into your account.
-2. Click on the "New Application" button.
-3. Enter a name and confirm the pop-up window by clicking the "Create" button.
+1. Visit the [Discord Developer Portal](https://discord.com/developers/applications).
+2. Click **"New Application"** and give it a name.
+3. Go to the **"Installation"** tab:
+   * Uncheck **User Install**
+   * Set **Install Link** to `"None"`
 
-You should see a page like this:
+<figure><img src="https://docs.drakodevelopment.net/~gitbook/image?url=https%3A%2F%2F793846788-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FH32pcDz3SxP8UThFTci3%252Fuploads%252FWYV7Wy9ch6YYBkmBqVdM%252F%257B508D5FA0-C009-41BB-BE1F-7A5B5810FD65%257D.png%3Falt%3Dmedia%26token%3D9c1880ad-ae5f-488a-ab12-a8e9ddc728e8&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=db8b6afc&#x26;sv=2" alt=""><figcaption></figcaption></figure>
 
-{% embed url="https://discordjs.guide/assets/create-app.ed82aede.png" %}
+\
+1\. Navigate to the **"Bot"** tab:
 
-You can edit your application's name, description, and avatar here. Once you've saved your changes, move on by selecting the "Bot" tab in the left panel.
+* Click **"Add Bot"**
+* Under **Privileged Gateway Intents**, enable:
+  * `PRESENCE INTENT`
+  * `SERVER MEMBERS INTENT`
+  * `MESSAGE CONTENT INTENT`
+* Under **Public Bot** settings:
+  * Disable **Public Bot**
+  * Untick **Require OAuth2 Code Grant**
 
-Click the "Add Bot" button on the right and confirm the pop-up window by clicking "Yes, do it!"
+<figure><img src="https://docs.drakodevelopment.net/~gitbook/image?url=https%3A%2F%2F793846788-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FH32pcDz3SxP8UThFTci3%252Fuploads%252Fxs5tgC3GPqmoq7OZL9JO%252F%257BB228AEFE-BD1B-415D-A001-A7675A7C6053%257D.png%3Falt%3Dmedia%26token%3Dab0e1aac-876f-4dec-af51-e21bdaf2c9bd&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=fc3a1863&#x26;sv=2" alt=""><figcaption></figcaption></figure>
 
-### Your token <a href="#your-token" id="your-token"></a>
+* Click **Save Changes**
+* Copy your **Bot Token** from the Token section
 
-{% hint style="danger" %}
-This section is critical, so pay close attention. It explains what your bot token is, as well as the security aspects of it.
+{% hint style="success" %}
+**Note:** All of these options are found under the **Bot** tab.
 {% endhint %}
-
-After creating a bot user, you'll see a section like this:
-
-{% embed url="https://discordjs.guide/assets/created-bot.b809fb6e.png" %}
-
-In this panel, you can give your bot an avatar, set its username, and make it public or private. You can access your token in this panel as well, either by revealing it or pressing the "Copy" button. When we ask you to paste your token somewhere, this is the value that you need to put in. Don't worry if you do happen to lose it at some point; you can always come back to this page and copy it again.
-
-### Gateway Intents <a href="#your-token" id="your-token"></a>
-
-{% hint style="danger" %}
-This section is critical, so pay close attention. This step shows you how to enable all of the gateway intents for the bot to work correctly.
-{% endhint %}
-
-Under the page, you'll see a section called "Privileged Gateway Intents", which will look at this:
-
-<figure><img src="../.gitbook/assets/firefox_madOMZ4uP6.png" alt=""><figcaption></figcaption></figure>
-
-In this section, you **MUST** enable the following intents: the Presence Intent, the Server Members Intent, and the Message Content Intent. Make sure the intents are enabled for the bot to work correctly.
